@@ -1,0 +1,53 @@
+services:
+  backend:
+    build:
+      context: ./simpleapi_2
+    container_name: backend
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      - database
+    networks:
+      - db_network
+      - proxy_network
+    restart: on-failure:3
+
+  database:
+    build:
+      context: ./postgres
+    container_name: my-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - db_network
+    restart: unless-stopped
+
+  httpd:
+    build:
+      context: ./http-server
+    container_name: apache
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    networks:
+      - proxy_network
+    restart: unless-stopped
+
+networks:
+  db_network:
+    driver: bridge
+
+  proxy_network:
+    driver: bridge
+
+volumes:
+  db-data:
