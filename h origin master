@@ -1,0 +1,61 @@
+[33mcommit cc2a438be56d8f020be27ac30c5c823653660e31[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Tue Jun 2 10:22:40 2026 +0200
+
+    add a line in the readme
+
+[33mcommit 8f17d623ad071d4ac74c4f2fbdae6d14a1ccfa6e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Guillaume de Montgolfier <demontgolfier.guillaume@gmail.com>
+Date:   Mon Jun 1 15:31:22 2026 +0200
+
+    Enhance README with Docker and Postgres documentation
+    
+    Added documentation for Docker and Postgres usage, including environment variables, volumes, multistage builds, reverse proxy, and docker-compose commands.
+
+[33mcommit b402ac58169206a14d4d836cb85d524c09018874[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 15:02:08 2026 +0200
+
+    add docker-compose and httpd.conf
+
+[33mcommit 3b23ca80749711c75120235dc6252352a5790846[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 13:25:47 2026 +0200
+
+    add simpleapi_2 and .env
+
+[33mcommit 988c5403f1d3285fd0b31844f49dca71373cfcf9[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 12:08:46 2026 +0200
+
+    add  part backend java, simpleapi
+
+[33mcommit 1a98a1da7039661b1754c4683c4922c1e241511c[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 11:17:33 2026 +0200
+
+    add folder for java and postgres app
+
+[33mcommit 3680021f121bff8206e75b00d278808d770c3678[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 10:25:56 2026 +0200
+
+    add a dockerfile for postgres
+
+[33mcommit 8098b899fc6a98255d2883320c5beb0fde08fd5c[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 09:49:54 2026 +0200
+
+    add the dockerfile
+
+[33mcommit ea91defdcd411b708a67a72d09bcaef20f478f0b[m
+Author: demontgolfierguillaume-prog <ton.email@exemple.com>
+Date:   Mon Jun 1 09:43:55 2026 +0200
+
+    flask-app
+
+[33mcommit bb9251e282ee145f84873cadb6d1b63c6df99774[m
+Author: Guillaume de Montgolfier <demontgolfier.guillaume@gmail.com>
+Date:   Mon Jun 1 09:38:35 2026 +0200
+
+    Initial commit
