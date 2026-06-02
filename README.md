@@ -70,3 +70,7 @@ Maven lance les tests unitaires et d’intégration
 Testcontainers démarre automatiquement un conteneur PostgreSQL et mon application teste réellement l’accès à une base de données réelle (mais temporaire et isolée)
 le conteneur est détruit automatiquement
 Testcontainers permet de tester ton application dans un environnement proche de la production en utilisant de vrais services (Docker), mais de façon temporaire et automatisée.
+
+
+2-2 For what purpose do we need to use secured variables ?
+On utilise des secured variables (secrets GitHub) pour stocker des informations sensibles sans les exposer dans le code.
