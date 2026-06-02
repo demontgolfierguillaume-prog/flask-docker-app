@@ -1,0 +1,27 @@
+name: CI backend
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Build and test with Maven
+        run: mvn clean verify --file TP/simpleapi_2/pom.xml
+
+      - name: SonarCloud analysis
+        run: mvn -B sonar:sonar -Dsonar.projectKey=demontgolfierguillaume-prog_flask-docker-app -Dsonar.organization=demontgolfierguillaume-prog -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file TP/simpleapi_2/pom.xml
