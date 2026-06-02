@@ -74,3 +74,7 @@ Testcontainers permet de tester ton application dans un environnement proche de 
 
 2-2 For what purpose do we need to use secured variables ?
 On utilise des secured variables (secrets GitHub) pour stocker des informations sensibles sans les exposer dans le code.
+
+
+2-3 Why did we put needs: build-and-test-backend on this job? Maybe try without this and you will see!
+On met "needs: build-and-test-backend" pour dire que le job Docker dépend du job de test.
