@@ -60,3 +60,6 @@ docker push guillaumedmg/tp-httpd:1.0
 
 1-10 Why do we put our images into an online repo?
 Ca permet de facilement les partager avec une team, que ca soit accessible depuis n'importe quel pc et pouvoir l'utiliser en production.
+
+
+Partie github
