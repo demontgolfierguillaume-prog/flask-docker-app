@@ -63,3 +63,10 @@ Ca permet de facilement les partager avec une team, que ca soit accessible depui
 
 
 Partie github
+
+2-1 What are testcontainers?
+Quand j'exécute "mvn clean verify"
+Maven lance les tests unitaires et d’intégration
+Testcontainers démarre automatiquement un conteneur PostgreSQL et mon application teste réellement l’accès à une base de données réelle (mais temporaire et isolée)
+le conteneur est détruit automatiquement
+Testcontainers permet de tester ton application dans un environnement proche de la production en utilisant de vrais services (Docker), mais de façon temporaire et automatisée.
