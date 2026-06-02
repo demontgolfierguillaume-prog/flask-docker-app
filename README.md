@@ -78,3 +78,8 @@ On utilise des secured variables (secrets GitHub) pour stocker des informations 
 
 2-3 Why did we put needs: build-and-test-backend on this job? Maybe try without this and you will see!
 On met "needs: build-and-test-backend" pour dire que le job Docker dépend du job de test.
+
+
+2-4 For what purpose do we need to push docker images?
+On pousse les images Docker vers un registre (comme Docker Hub) pour pouvoir les stocker, les partager et les réutiliser en dehors du pipeline CI.
+
