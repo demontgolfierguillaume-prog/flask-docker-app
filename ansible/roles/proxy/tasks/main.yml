@@ -6,6 +6,6 @@
     networks:
       - name: app-network
     env:
-      APILINK: "http://backend:8080/api"
+      APILINK: "http://backend:8080"
     ports:
       - "80:80"
