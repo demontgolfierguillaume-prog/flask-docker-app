@@ -10,4 +10,4 @@
       POSTGRES_PASSWORD: "{{ postgres_password }}"
       POSTGRES_DB: "{{ postgres_db }}"
     volumes:
-      - db_data:/var/lib/postgresql/data
+      - tp_db-data:/var/lib/postgresql/data
