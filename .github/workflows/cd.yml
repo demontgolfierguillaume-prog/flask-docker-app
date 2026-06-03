@@ -92,8 +92,8 @@ jobs:
       - name: Configure SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 400 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa_takima
+          chmod 400 ~/.ssh/id_rsa_takima
 
       - name: Add server to known_hosts
         run: |
