@@ -27,6 +27,7 @@ jobs:
         with:
           context: ./TD/TP/simpleapi_2
           push: true
+          no-cache: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-simple-api:${{ github.sha }}
@@ -49,6 +50,7 @@ jobs:
         with:
           context: ./TD/TP/http-server
           push: true
+          no-cache: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-httpd:${{ github.sha }}
@@ -71,6 +73,7 @@ jobs:
         with:
           context: ./TD/TP/postgres
           push: true
+          no-cache: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:${{ github.sha }}
@@ -92,6 +95,7 @@ jobs:
         with:
           context: ./TD/TP/devops-front-main
           push: true
+          no-cache: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-front:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-front:${{ github.sha }}
