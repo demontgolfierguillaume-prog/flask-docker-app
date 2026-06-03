@@ -2,6 +2,7 @@
   docker_container:
     name: backend
     image: guillaumedmg/tp-devops-simple-api:latest
+    pull: true
     networks:
       - name: app-network
     env:

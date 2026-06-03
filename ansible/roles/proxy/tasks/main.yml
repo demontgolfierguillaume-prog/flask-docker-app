@@ -2,6 +2,7 @@
   docker_container:
     name: proxy
     image: guillaumedmg/tp-devops-httpd:latest
+    pull: true
     networks:
       - name: app-network
     env:

@@ -42,6 +42,14 @@ services:
       - proxy_network
     restart: unless-stopped
 
+  front:
+    build:
+      context: ./devops-front-main
+    container_name: front
+    networks:
+      - proxy_network
+    restart: unless-stopped
+
 networks:
   db_network:
     driver: bridge
