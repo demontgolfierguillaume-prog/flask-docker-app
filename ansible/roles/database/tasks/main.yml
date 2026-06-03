@@ -1,0 +1,12 @@
+- name: Run database container
+  docker_container:
+    name: my-db
+    image: guillaumedmg/tp-devops-postgres:latest
+    networks:
+      - name: app-network
+    env:
+      POSTGRES_USER: "{{ postgres_user }}"
+      POSTGRES_PASSWORD: "{{ postgres_password }}"
+      POSTGRES_DB: "{{ postgres_db }}"
+    volumes:
+      - db_data:/var/lib/postgresql/data

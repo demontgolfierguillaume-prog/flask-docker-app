@@ -1,0 +1,9 @@
+all:
+  vars:
+    ansible_user: admin
+    ansible_ssh_private_key_file: ~/.ssh/id_rsa_takima
+
+  children:
+    prod:
+      hosts:
+        guillaume.demontgolfier.takima.school

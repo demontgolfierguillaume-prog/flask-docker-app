@@ -1,0 +1,10 @@
+- name: Run proxy container
+  docker_container:
+    name: proxy
+    image: guillaumedmg/tp-devops-httpd:latest
+    networks:
+      - name: app-network
+    env:
+      APILINK: "http://backend:8080"
+    ports:
+      - "80:80"

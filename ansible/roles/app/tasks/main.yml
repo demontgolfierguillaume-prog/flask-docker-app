@@ -1,0 +1,10 @@
+- name: Run API container
+  docker_container:
+    name: backend
+    image: guillaumedmg/tp-devops-simple-api:latest
+    networks:
+      - name: app-network
+    env:
+      POSTGRES_DB: "{{ postgres_db }}"
+      POSTGRES_USER: "{{ postgres_user }}"
+      POSTGRES_PASSWORD: "{{ postgres_password }}"

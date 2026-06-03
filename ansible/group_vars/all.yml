@@ -1,0 +1,10 @@
+---
+# Variables globales utilisées par les rôles
+postgres_user: "usr"
+postgres_password: "pwd"
+postgres_db: "db"
+dockerhub_repo: "guillaumedmg"
+
+
+
+
