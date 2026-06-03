@@ -37,4 +37,4 @@ jobs:
           java-version: 21
 
       - name: SonarCloud analysis
-        run: mvn -B clean verify sonar:sonar -Dsonar.projectKey=demontgolfierguillaume-prog_flask-docker-app -Dsonar.organization=demontgolfierguillaume-prog -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file TP/simpleapi_2/pom.xml
+        run: mvn -B clean verify sonar:sonar -Dsonar.projectKey=demontgolfierguillaume-prog_flask-docker-app -Dsonar.organization=demontgolfierguillaume-prog -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file TD/TP/simpleapi_2/pom.xml
