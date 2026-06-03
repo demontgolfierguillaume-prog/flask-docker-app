@@ -78,21 +78,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:${{ github.sha }}
 
-  deploy:
-    needs: [build-backend-image, build-httpd-image, build-database-image]
-    runs-on: ubuntu-24.04
 
-    steps:
-      - name: Deploy on server via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd /home/admin/app/TD/TP
-            docker compose pull
-            docker compose up -d
   deploy:
   needs: [build-backend-image, build-httpd-image, build-database-image]
   runs-on: ubuntu-24.04
