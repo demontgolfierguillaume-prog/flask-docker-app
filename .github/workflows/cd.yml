@@ -74,32 +74,3 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/tp-devops-postgres:${{ github.sha }}
-
-
-  deploy:
-    needs: [build-backend-image, build-httpd-image, build-database-image]
-    runs-on: ubuntu-24.04
-    environment: Production
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install Ansible
-        run: |
-          sudo apt update
-          sudo apt install -y ansible
-
-      - name: Configure SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa_takima
-          chmod 400 ~/.ssh/id_rsa_takima
-
-      - name: Add server to known_hosts
-        run: |
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
-      - name: Run Ansible playbook
-        run: |
-          ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml
