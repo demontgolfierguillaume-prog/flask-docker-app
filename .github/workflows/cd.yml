@@ -93,3 +93,25 @@ jobs:
             cd /home/admin/app/TD/TP
             docker compose pull
             docker compose up -d
+  deploy:
+  needs: [build-backend-image, build-httpd-image, build-database-image]
+  runs-on: ubuntu-24.04
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Ansible
+      run: |
+        sudo apt update
+        sudo apt install -y ansible
+
+    - name: Configure SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 400 ~/.ssh/id_rsa
+
+    - name: Run Ansible playbook
+      run: |
+        ansible-playbook -i inventories/setup.yml playbook.yml
