@@ -4,7 +4,7 @@
     image: guillaumedmg/tp-devops-httpd:latest
     pull: true
     networks:
-      - name: app-network
+      - name: proxy_network
     env:
       APILINK: "http://backend:8080"
     ports:

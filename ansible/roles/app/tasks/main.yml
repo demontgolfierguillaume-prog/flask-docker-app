@@ -4,7 +4,8 @@
     image: guillaumedmg/tp-devops-simple-api:latest
     pull: true
     networks:
-      - name: app-network
+      - name: db_network
+      - name: proxy_network
     env:
       POSTGRES_DB: "{{ postgres_db }}"
       POSTGRES_USER: "{{ postgres_user }}"

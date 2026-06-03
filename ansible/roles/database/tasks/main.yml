@@ -4,7 +4,7 @@
     image: guillaumedmg/tp-devops-postgres:latest
     pull: true
     networks:
-      - name: app-network
+      - name: db_network
     env:
       POSTGRES_USER: "{{ postgres_user }}"
       POSTGRES_PASSWORD: "{{ postgres_password }}"
