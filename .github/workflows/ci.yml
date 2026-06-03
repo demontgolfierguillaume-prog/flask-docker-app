@@ -21,7 +21,7 @@ jobs:
           java-version: 21
 
       - name: Build and test with Maven
-        run: mvn clean verify --file TP/simpleapi_2/pom.xml
+        run: mvn clean verify --file TD/TP/simpleapi_2/pom.xml
 
   test-sonar:
     needs: test-backend
