@@ -100,4 +100,4 @@ jobs:
 
       - name: Run Ansible playbook
         run: |
-          ansible-playbook -i ansible/inventories/setup.yml playbook.yml
+          ansible-playbook -i ansible/inventories/setup.yml ansible/playbook.yml
