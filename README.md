@@ -111,3 +111,12 @@ Is it really safe to deploy automatically every new image on the hub ? explain. 
 Non c'est pas forcement sur de deployer directement car ca peut deployer avec un beug.
 Il faut faire comme on a fait et rajouter un environnelent pour le deploy qui permet de donner son accord pour deploy.
 .
+
+
+Travail en bonus corrigé partiellement:
+Load balancing:
+Les 2 backend et tout des containers tournent bien mais il y une erreur depuis que j'ai changé de vm pour celle de victoire. (m'a vm a crash le dernier jour au moment du load balancing).
+Tout a l'air fonctionnel mais il y a une erreur sur le proxy qui n'est pas affiché sur le network dans inspecté. Le code à été vérifié par Victoire mais l'erreur étais trop compliquée a trouver dans le temps restant.
+
+
+J'ai aussi fait une partie pour grafana (dans les roles) mais non tester et non implementé dans le playbook.
