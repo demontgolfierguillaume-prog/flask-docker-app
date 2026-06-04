@@ -1,0 +1,38 @@
+- name: Create monitoring network
+  docker_network:
+    name: monitoring
+
+- name: Run Node Exporter
+  docker_container:
+    name: node-exporter
+    image: prom/node-exporter:latest
+    pull: true
+    restart_policy: unless-stopped
+    networks:
+      - name: monitoring
+    ports:
+      - "9100:9100"
+
+- name: Run Prometheus
+  docker_container:
+    name: prometheus
+    image: prom/prometheus:latest
+    pull: true
+    restart_policy: unless-stopped
+    networks:
+      - name: monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - /home/admin/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+- name: Run Grafana
+  docker_container:
+    name: grafana
+    image: grafana/grafana:latest
+    pull: true
+    restart_policy: unless-stopped
+    networks:
+      - name: monitoring
+    ports:
+      - "3000:3000"

@@ -1,6 +1,19 @@
-- name: Run API container
+- name: Run backend-1
   docker_container:
-    name: backend
+    name: backend-1
+    image: guillaumedmg/tp-devops-simple-api:latest
+    pull: true
+    networks:
+      - name: db_network
+      - name: proxy_network
+    env:
+      POSTGRES_DB: "{{ postgres_db }}"
+      POSTGRES_USER: "{{ postgres_user }}"
+      POSTGRES_PASSWORD: "{{ postgres_password }}"
+
+- name: Run backend-2
+  docker_container:
+    name: backend-2
     image: guillaumedmg/tp-devops-simple-api:latest
     pull: true
     networks:
