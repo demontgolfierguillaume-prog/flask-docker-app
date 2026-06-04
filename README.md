@@ -110,3 +110,4 @@ En gros je pull les images et jutiliser mes identifiants qui sont caché niveau 
 Is it really safe to deploy automatically every new image on the hub ? explain. What can I do to make it more secure?
 Non c'est pas forcement sur de deployer directement car ca peut deployer avec un beug.
 Il faut faire comme on a fait et rajouter un environnelent pour le deploy qui permet de donner son accord pour deploy.
+.
