@@ -6,4 +6,4 @@ all:
   children:
     prod:
       hosts:
-        guillaume.demontgolfier.takima.school
+        vdelacharriere.takima.school

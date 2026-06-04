@@ -83,4 +83,30 @@ On met "needs: build-and-test-backend" pour dire que le job Docker dépend du jo
 2-4 For what purpose do we need to push docker images?
 On pousse les images Docker vers un registre (comme Docker Hub) pour pouvoir les stocker, les partager et les réutiliser en dehors du pipeline CI.
 
-test 2
+3-1 Document your inventory and base commands
+ansible all -i inventories/setup.yml -m ping pour verifeir la connexion
+ansible all -i inventories/setup.yml -m apt -a "name=apache2 state=absent" --become pour supp apache2
+
+3-2 Document your playbook
+- hosts: all
+  become: true
+  gather_facts: true
+
+  roles:
+    - docker
+    - network
+    - database
+    - app
+    - proxy
+    - front
+
+chaque role = une responsabilité
+plus maintenable
+déploiement propre
+
+3-3 Document your docker_container tasks configuration
+En gros je pull les images et jutiliser mes identifiants qui sont caché niveau utilisateurs.
+
+Is it really safe to deploy automatically every new image on the hub ? explain. What can I do to make it more secure?
+Non c'est pas forcement sur de deployer directement car ca peut deployer avec un beug.
+Il faut faire comme on a fait et rajouter un environnelent pour le deploy qui permet de donner son accord pour deploy.
