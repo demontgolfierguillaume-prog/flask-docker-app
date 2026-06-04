@@ -5,7 +5,5 @@
     pull: true
     networks:
       - name: proxy_network
-    env:
-      APILINK: "http://backend:8080"
     ports:
       - "80:80"
